@@ -17,7 +17,7 @@ if __name__ == "__main__":
         print(f"unable to read from '{file1}'! Access denied.\n")
     except Exception as e:
         print(f"Error: {e}")
-    
+
     print("\nSECURE PRESERVATION:")
     try:
         new_protocol = "[CLASSIFIED] New security protocols archived"

@@ -1,4 +1,5 @@
 if __name__ == "__main__":
+    f = None
     try:
         print("=== CYBER ARCHIVES - PRESERVATION SYSTEM ===")
         file = "new_discovery.txt"
@@ -19,7 +20,7 @@ if __name__ == "__main__":
         f.write(entry2 + "\n")
         print(entry3)
         f.write(entry3 + "\n")
-      
+
         print("\nData inscription complete. Storage unit sealed.")
         print(f"Archive '{file}' ready for long-term preservation.")
     
@@ -28,6 +29,6 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"Error: {e}")
     finally:
-        if 'f' in locals() and not f.closed:
+        if f and not f.closed:
             f.close()
-            print("\nfile closed successfuly")
+            print("\nfile closed successfully")
