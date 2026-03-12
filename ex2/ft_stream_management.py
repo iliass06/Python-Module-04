@@ -10,7 +10,7 @@ if __name__ == "__main__":
         print()
         print(f"[STANDARD] Archive status from {id}: {status_report}")
         print("[ALERT] System diagnostic: Communication channels verified", file=sys.stderr)
-        print("[STANDARD] Data transmission complete\n")
+        print("[STANDARD] Data transmission complete")
         print("\nThree-channel communication test successful.")
     
     except KeyboardInterrupt:
