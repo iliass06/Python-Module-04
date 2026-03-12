@@ -11,7 +11,7 @@ if __name__ == "__main__":
     except FileNotFoundError:
         print("RESPONSE: Archive not found in storage matrix")
         print("STATUS: Crisis handled, system stable")
-    
+
     print(f"\nCRISIS ALERT: Attempting access to '{file2}'...")
     try:
         with open(file2, "r") as f2:
@@ -25,7 +25,7 @@ if __name__ == "__main__":
         print("STATUS: Crisis handled, security maintained")
     except Exception as e:
         print(f"Error: {e}")
-    
+
     print(f"\nROUTINE ACCESS: Attempting access to '{file3}'...")
     try:
         with open(file3, "r") as f3:
@@ -38,5 +38,5 @@ if __name__ == "__main__":
         print(f"unable to read from '{file3}'! Access denied.")
     except Exception as e:
         print(f"Error: {e}")
-    
+
     print("\nAll crisis scenarios handled successfully. Archives secure.")

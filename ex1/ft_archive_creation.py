@@ -1,6 +1,5 @@
 if __name__ == "__main__":
     try:
-        f = None
         print("=== CYBER ARCHIVES - PRESERVATION SYSTEM ===")
         file = "new_discovery.txt"
         print(f"\nInitializing new storage unit: {file}")
@@ -20,14 +19,12 @@ if __name__ == "__main__":
         f.write(entry2 + "\n")
         print(entry3)
         f.write(entry3 + "\n")
+        f.close()
 
         print("\nData inscription complete. Storage unit sealed.")
         print(f"Archive '{file}' ready for long-term preservation.")
-    
     except PermissionError:
         print(f"Access denied: cannot write to '{file}'")
     except Exception as e:
         print(f"Error: {e}")
-    finally:
-        if f and not f.closed:
-            f.close()
+        print(f.closed)

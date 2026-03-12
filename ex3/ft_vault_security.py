@@ -7,7 +7,7 @@ if __name__ == "__main__":
     print("Vault connection established with failsafe protocols")
 
     print("\nSECURE EXTRACTION:")
-    try:    
+    try:
         with open(file1, "r") as f1:
             data1 = f1.read()
             print(data1)
@@ -29,5 +29,5 @@ if __name__ == "__main__":
         print(f"unable to write to '{file2}'! Access denied.")
     except Exception as e:
         print(f"Error: {e}")
-        
+
     print("\nAll vault operations completed with maximum security.")
