@@ -1,22 +1,9 @@
-if __name__ == "__main__":
-    print("=== CYBER ARCHIVES - CRISIS RESPONSE SYSTEM ===")
-    file1 = "lost_archive.txt"
-    file2 = "classified_vault.txt"
-    file3 = "standard_archive.txt"
-
-    print(f"\nCRISIS ALERT: Attempting access to '{file1}'...")
+def crisis_handler(filepath: str, mode: str) -> None:
     try:
-        with open(file1, "r") as f1:
-            data = f1.read()
-    except FileNotFoundError:
-        print("RESPONSE: Archive not found in storage matrix")
-        print("STATUS: Crisis handled, system stable")
-
-    print(f"\nCRISIS ALERT: Attempting access to '{file2}'...")
-    try:
-        with open(file2, "r") as f2:
-            data2 = f2.read()
-            print(f"SUCCESS: {data2}")
+        with open(filepath, mode) as f:
+            data = f.read()
+            print(f"SUCCESS: Archive recovered - ''{data}''")
+            print("STATUS: Normal operations resumed")
     except FileNotFoundError:
         print("RESPONSE: Archive not found in storage matrix")
         print("STATUS: Crisis handled, system stable")
@@ -26,17 +13,25 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"Error: {e}")
 
+
+def main() -> None:
+    print("=== CYBER ARCHIVES - CRISIS RESPONSE SYSTEM ===")
+
+    file1 = "lost_archive.txt"
+    file2 = "classified_vault.txt"
+    file3 = "standard_archive.txt"
+
+    print(f"\nCRISIS ALERT: Attempting access to '{file1}'...")
+    crisis_handler(file1, "r")
+
+    print(f"\nCRISIS ALERT: Attempting access to '{file2}'...")
+    crisis_handler(file2, "r")
+
     print(f"\nROUTINE ACCESS: Attempting access to '{file3}'...")
-    try:
-        with open(file3, "r") as f3:
-            data3 = f3.read()
-        print(f"SUCCESS: Archive recovered - ''{data3}''")
-        print("STATUS: Normal operations resumed")
-    except FileNotFoundError:
-        print(f"'{file3}' not found")
-    except PermissionError:
-        print(f"unable to read from '{file3}'! Access denied.")
-    except Exception as e:
-        print(f"Error: {e}")
+    crisis_handler(file3, "r")
 
     print("\nAll crisis scenarios handled successfully. Archives secure.")
+
+
+if __name__ == "__main__":
+    main()

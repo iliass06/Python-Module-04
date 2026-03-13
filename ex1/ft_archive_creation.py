@@ -27,4 +27,3 @@ if __name__ == "__main__":
         print(f"Access denied: cannot write to '{file}'")
     except Exception as e:
         print(f"Error: {e}")
-        print(f.closed)
